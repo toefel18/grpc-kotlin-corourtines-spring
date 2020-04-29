@@ -20,6 +20,8 @@ class CoroutineController(val client: RngServiceGrpcKt.RngServiceCoroutineStub) 
 
         val request = RngRequest.newBuilder()
                 .setNumGenerated(1)
+                .setDelayMillis(delay)
+                .build()
 
         log.info("sending request to grpc backend server $request")
 
