@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package nl.toefel;
+
+option java_multiple_files = true;
+
+service RngService {
+    rpc CalculateRandoms (RngRequest) returns (RngResponse) {}
+}
+
+message RngRequest {
+    int32 num_generated = 1;
+    int64 delay_millis = 2;
+}
+
+message RngResponse {
+    repeated int64 randoms = 1;
+}
